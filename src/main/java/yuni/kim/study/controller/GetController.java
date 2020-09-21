@@ -33,8 +33,6 @@ public class GetController {
     //http://localhost:8080/api/getMultiParameter?account=test&email=test@gmail.com&page=10
     @GetMapping("/getMultiParameter")
     public SearchParam getMultiParameter(SearchParam searchParam){
-        System.out.printf("account : %s / email : %s / page : %d ", searchParam.getAccount(), searchParam.getEmail(), searchParam.getPage());
-
         //자동적으로 json타입으로 결과값을 반환한다. {"account":"test","email":"test@gmail.com","page":10}
         return searchParam;
     }
