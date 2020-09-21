@@ -10,29 +10,31 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDateTime;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 @Entity
-public class Item {
+public class Partnet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String status;
-
     private String name;
 
-    private String title;
+    private String status;
 
-    private String content;
+    private String address;
 
-    private Integer price;
+    private String callCenter;
 
-    private String brandName;
+    private String partnerNumber;
 
-    private LocalDateTime registeredAt;
+    private String businessNumber;
+
+    private String ceoName;
+
+    private LocalDateTime RegisteredAt;
 
     private LocalDateTime unregisteredAt;
 

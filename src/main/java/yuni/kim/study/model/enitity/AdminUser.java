@@ -10,29 +10,31 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDateTime;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 @Entity
-public class Item {
+public class AdminUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
+
+    private String account;
+
+    private String password;
 
     private String status;
 
-    private String name;
+    private String role;
 
-    private String title;
+    private LocalDateTime lastLoginAt;
 
-    private String content;
+    private LocalDateTime passwordUpdatedAt;
 
-    private Integer price;
+    private int loginFailCount;
 
-    private String brandName;
-
-    private LocalDateTime registeredAt;
+    private LocalDateTime registeredAT;
 
     private LocalDateTime unregisteredAt;
 
@@ -42,6 +44,6 @@ public class Item {
 
     private LocalDateTime updatedAt;
 
-    private String updatedBy;
+    private String updatdBy;
 
 }

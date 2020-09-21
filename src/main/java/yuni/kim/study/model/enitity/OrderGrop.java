@@ -8,13 +8,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 @Entity
-public class Item {
+public class OrderGrop {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,19 +23,23 @@ public class Item {
 
     private String status;
 
-    private String name;
+    //주문형태 일괄 / 개별
+    private String orderType;
 
-    private String title;
+    private String revAddress;
 
-    private String content;
+    private String revName;
 
-    private Integer price;
+    //결제 수단 카드 / 현금
+    private String paymentType;
 
-    private String brandName;
+    private BigDecimal totalPrice;
 
-    private LocalDateTime registeredAt;
+    private Integer totalQuantity;
 
-    private LocalDateTime unregisteredAt;
+    private LocalDateTime orderAT;
+
+    private LocalDateTime arrivalDate;
 
     private LocalDateTime createdAt;
 
