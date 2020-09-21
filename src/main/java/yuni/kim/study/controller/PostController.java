@@ -19,7 +19,7 @@ public class PostController {
 
     produces - 어떤 형식의 데이터를 받는지 알려준다. 기본 json형식을 받는다. 생략 가능하다. */
     @PostMapping(value = "/postMethod")
-    /* @RequestBody 어노테이션과 @ResponseBody 각각 HTTP 요청 몸체를 자바 객체로 변환,
+    /* @RequestBody / @ResponseBody 각각 HTTP 요청 몸체를 자바 객체로 변환,
     자바 객체를 HTTP 응답 몸체로 변환하는 데 사용
 
     @RequestBody HTTP 요청 몸체를 자바 객체로 전달

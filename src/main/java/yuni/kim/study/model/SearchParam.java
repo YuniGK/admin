@@ -1,34 +1,17 @@
 package yuni.kim.study.model;
 
-public class SearchParam {
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
-    private String account, email;
+/* lombok을 사용하게 되면, 기본 생성자 및 getter/setter을 알아서 생성해준다.
+* @NoArgsConstructor는 기본생성자, @AllArgsConstructor는 필드값을 모두 포함한 생성자를 자동 생성*/
+@Data
+@AllArgsConstructor
+public class SearchParam {
     private int page;
+    private String account, email;
 
     //생성자
-
     //getter / setter
-    public String getAccount() {
-        return account;
-    }
 
-    public void setAccount(String account) {
-        this.account = account;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getPage() {
-        return page;
-    }
-
-    public void setPage(int page) {
-        this.page = page;
-    }
 }
