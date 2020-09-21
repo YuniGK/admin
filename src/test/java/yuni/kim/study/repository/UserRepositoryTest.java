@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import yuni.kim.study.StudyApplicationTests;
+import yuni.kim.study.model.enitity.Item;
 import yuni.kim.study.model.enitity.User;
 
 import java.time.LocalDateTime;
@@ -35,10 +36,18 @@ class UserRepositoryTest extends StudyApplicationTests {
 
     @Test
     public void read(){
-        Optional<User> user = userRepository.findById(2L);
+        /* select * from user where id = 2L
+        Optional<User> user = userRepository.findById(2L); */
+
+        //select * from user where account = ?
+        Optional<User> user = userRepository.findByAccount("TestUser01");
 
         user.ifPresent(selectUser -> {
-            System.out.println("user "+ selectUser);
+            selectUser.getOrderDetailList().stream().forEach(detail -> {
+                Item item = detail.getItem();
+
+                System.out.println(item);
+            });
         });
     }
 

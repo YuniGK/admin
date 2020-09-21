@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 /* DB 테이블명과 클래스명을 일치시킨다.
  * 이름이 일치하지 않을 경우 설정해준다. @Table(name = "user")*/
@@ -35,4 +36,15 @@ public class User {
     private LocalDateTime updatedAt;
 
     private String updatdBy;
+
+    /* 1:N
+    * mappedBy = "user" → OrderDetail에 설정해놓은 user와 동일한 이름이다.
+    *
+    * LAZY = 지연로딩, 연관된 테이블을 별도로 조회하지 않는다.
+    * select * from item where id = ?
+    *
+    * EAGER = 즉시로딩, 1:1 권장한다.
+    * ... join item ... 연관 테이블을 모두 조회한다. */
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    private List<OrderDetail> orderDetailList;
 }
