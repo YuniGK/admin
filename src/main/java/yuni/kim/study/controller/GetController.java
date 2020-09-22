@@ -2,6 +2,7 @@ package yuni.kim.study.controller;
 
 import org.springframework.web.bind.annotation.*;
 import yuni.kim.study.model.SearchParam;
+import yuni.kim.study.model.network.Header;
 
 @RestController
 @RequestMapping("/api") //http://localhost:8080/api
@@ -35,6 +36,11 @@ public class GetController {
     public SearchParam getMultiParameter(SearchParam searchParam){
         //자동적으로 json타입으로 결과값을 반환한다. {"account":"test","email":"test@gmail.com","page":10}
         return searchParam;
+    }
+
+    @GetMapping("/header")
+    public Header getHeader(){
+        return Header.builder().resultCode("OK").description("OK").build();
     }
 
 }

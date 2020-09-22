@@ -43,7 +43,7 @@ public class Category {
     private String updatedBy;
 
     // Category 1 : Partner N
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "partner")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "category")
     private List<Partner> partnerList;
 
 }

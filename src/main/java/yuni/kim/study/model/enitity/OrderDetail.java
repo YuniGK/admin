@@ -47,8 +47,6 @@ public class OrderDetail {
     @LastModifiedBy //엔티티 수정한 사용자 정보를 자동 주입
     private String updatedBy;
 
-    private Long orderGroupId;
-
     //OrderDetail N : Item 1
     @ManyToOne
     private Item item;

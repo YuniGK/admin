@@ -25,12 +25,6 @@ class OrderDetailRepositoryTest extends StudyApplicationTests {
         orderDetail.setQuantity(1);
         //BigDecimal.valueOf () 메서드는 비슷한 형식 매개 변수를 사용하는 생성자보다 우선적으로 제공
         orderDetail.setTotalPrice(BigDecimal.valueOf(100000));
-        orderDetail.setCreatedAt(LocalDateTime.now());
-        //어떤 사람
-        //orderDetail.setOrderGroupId(1L);
-        //어떤 상품
-        //orderDetail.setItemId(1L);
-        orderDetail.setCreatedBy("AdminServer");
 
         OrderDetail newOrderDetail = orderDetailRepository.save(orderDetail);
 

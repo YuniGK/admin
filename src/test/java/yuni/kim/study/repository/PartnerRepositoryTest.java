@@ -25,10 +25,7 @@ class PartenrRepositoryTest extends StudyApplicationTests {
         partner.setPartnerNumber("010-1234-5678");
         partner.setBusinessNumber("123456780123");
         partner.setCeoName("홍길동");
-        partner.setRegisteredAt(LocalDateTime.now());
-        partner.setCreatedAt(LocalDateTime.now());
-        partner.setCreatedBy("AdminServer");
-        //partner.setCategoryId(1L);
+        partner.setRegisteredAt(LocalDateTime.now());;
 
         Partner newPartner = partnerRepository.save(partner);
 

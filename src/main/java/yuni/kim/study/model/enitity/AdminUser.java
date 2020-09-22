@@ -18,8 +18,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Data
 @Entity
-//엔티티는 해당 감시자를 사용한다.라는 것을 알려준다.
-@EntityListeners(AuditingEntityListener.class)
+@EntityListeners(AuditingEntityListener.class) //엔티티는 해당 감시자를 사용한다.라는 것을 알려준다.
 @Builder
 @Accessors(chain = true)
 public class AdminUser {
