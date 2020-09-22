@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Data
 @Entity
-public class OrderGrop {
+public class OrderGroup {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,7 +37,7 @@ public class OrderGrop {
 
     private Integer totalQuantity;
 
-    private LocalDateTime orderAT;
+    private LocalDateTime orderAt;
 
     private LocalDateTime arrivalDate;
 
@@ -48,5 +48,7 @@ public class OrderGrop {
     private LocalDateTime updatedAt;
 
     private String updatedBy;
+
+    public Long userId;
 
 }

@@ -9,4 +9,8 @@ import yuni.kim.study.model.enitity.User;
 * <어떤 타입 클래스를 사용할 것인지, 기본키의 타입형> */
 public interface UserRepository extends JpaRepository<User, Long> {
 
+        //가장 최근에 저장된 값이 리턴된다.
+                                //아이디 역순으로 정렬된다.
+    User findFirstByPhoneNumberOrderByIdDesc(String phoneNumber);
+
 }

@@ -35,7 +35,7 @@ public class User {
     // phone_number 자동으로 phoneNumber인식한다.
     private String phoneNumber;
 
-    private LocalDateTime registeredAT;
+    private LocalDateTime registeredAt;
 
     private LocalDateTime unregisteredAt;
 
@@ -45,6 +45,6 @@ public class User {
 
     private LocalDateTime updatedAt;
 
-    private String updatdBy;
+    private String updatedBy;
 
 }

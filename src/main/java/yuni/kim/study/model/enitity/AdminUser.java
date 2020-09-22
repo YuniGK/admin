@@ -34,7 +34,7 @@ public class AdminUser {
 
     private int loginFailCount;
 
-    private LocalDateTime registeredAT;
+    private LocalDateTime registeredAt;
 
     private LocalDateTime unregisteredAt;
 
@@ -44,6 +44,6 @@ public class AdminUser {
 
     private LocalDateTime updatedAt;
 
-    private String updatdBy;
+    private String updatedBy;
 
 }

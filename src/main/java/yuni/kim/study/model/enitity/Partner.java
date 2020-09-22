@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Data
 @Entity
-public class Partnet {
+public class Partner {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,7 +34,7 @@ public class Partnet {
 
     private String ceoName;
 
-    private LocalDateTime RegisteredAt;
+    private LocalDateTime registeredAt;
 
     private LocalDateTime unregisteredAt;
 
@@ -45,5 +45,7 @@ public class Partnet {
     private LocalDateTime updatedAt;
 
     private String updatedBy;
+
+    private Long categoryId;
 
 }
