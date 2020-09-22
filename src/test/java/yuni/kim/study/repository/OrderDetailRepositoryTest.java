@@ -2,16 +2,14 @@ package yuni.kim.study.repository;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 import yuni.kim.study.StudyApplicationTests;
 import yuni.kim.study.model.enitity.OrderDetail;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-@Transactional
 class OrderDetailRepositoryTest extends StudyApplicationTests {
 
     @Autowired

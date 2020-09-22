@@ -2,7 +2,6 @@ package yuni.kim.study.repository;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 import yuni.kim.study.StudyApplicationTests;
 import yuni.kim.study.model.enitity.Partner;
 
@@ -10,7 +9,6 @@ import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-@Transactional
 class PartenrRepositoryTest extends StudyApplicationTests {
 
     @Autowired
