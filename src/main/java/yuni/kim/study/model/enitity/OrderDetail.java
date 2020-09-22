@@ -3,17 +3,16 @@ package yuni.kim.study.model.enitity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(exclude = {"orderGroup", "item"})
 @Entity
 public class OrderDetail {
 
@@ -40,6 +39,12 @@ public class OrderDetail {
 
     private Long orderGroupId;
 
-    private Long itemId;
+    //OrderDetail N : Item 1
+    @ManyToOne
+    private Item item;
+
+    //OrderDetail N : OrderGrop 1
+    @ManyToOne
+    private OrderGroup orderGroup;
 
 }

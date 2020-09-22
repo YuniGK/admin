@@ -3,16 +3,16 @@ package yuni.kim.study.model.enitity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(exclude = {"user", "orderDetailList"})
 @Data
 @Entity
 public class OrderGroup {
@@ -49,6 +49,12 @@ public class OrderGroup {
 
     private String updatedBy;
 
-    public Long userId;
+    //OrderGroup N : User 1
+    @ManyToOne
+    public User user;
+
+    //OrderGrop 1 : OrderDetail N
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "orderGroup")
+    private List<OrderDetail> orderDetailList;
 
 }

@@ -3,16 +3,16 @@ package yuni.kim.study.model.enitity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@ToString(exclude = {"partnerList"})
 @Entity
 public class Category {
 
@@ -31,5 +31,9 @@ public class Category {
     private LocalDateTime updatedAt;
 
     private String updatedBy;
+
+    // Category 1 : Partner N
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "partner")
+    private List<Partner> partnerList;
 
 }

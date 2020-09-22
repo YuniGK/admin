@@ -3,16 +3,16 @@ package yuni.kim.study.model.enitity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@ToString(exclude = {"itemList", "category"})
 @Entity
 public class Partner {
 
@@ -46,6 +46,12 @@ public class Partner {
 
     private String updatedBy;
 
-    private Long categoryId;
+    // Partner N : Category 1
+    @ManyToOne
+    private Category category;
+
+    // Partner 1 : Item N
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "partner")
+    private List<Item> itemList;
 
 }

@@ -21,10 +21,10 @@ class UserRepositoryTest extends StudyApplicationTests {
     public void create(){
         User user = new User();
 
-        user.setAccount("user01");
-        user.setPassword("test01");
+        user.setAccount("user02");
+        user.setPassword("test02");
         user.setStatus("registered");
-        user.setEmail("test01@gmail.com");
+        user.setEmail("test02@gmail.com");
         user.setPhoneNumber("010-1234-5678");
         user.setRegisteredAt(LocalDateTime.now());
         user.setCreatedAt(LocalDateTime.now());
@@ -40,9 +40,21 @@ class UserRepositoryTest extends StudyApplicationTests {
 
     @Test
     public void read(){
-        User newUser = userRepository.findFirstByPhoneNumberOrderByIdDesc("010-1234-5678");
+        User user = userRepository.findFirstByPhoneNumberOrderByIdDesc("010-1234-5678");
 
-        assertNotNull(newUser);
+        user.getOrderGroupList().stream().forEach(orderGroup -> {
+            System.out.println("------- 주문묶음 -----");
+            System.out.println("수령인 " + orderGroup.getRevName());
+
+            System.out.println("------- 주문상세 -----");
+            orderGroup.getOrderDetailList().forEach(orderDetail -> {
+                System.out.println("주문상태 " + orderDetail.getStatus());
+
+                System.out.println("주문상품 " + orderDetail.getItem().getName());
+            });
+        });
+
+        assertNotNull(user);
     }
 
 }

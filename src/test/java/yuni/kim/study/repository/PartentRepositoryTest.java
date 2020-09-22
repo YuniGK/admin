@@ -30,7 +30,7 @@ class PartenrRepositoryTest extends StudyApplicationTests {
         partner.setRegisteredAt(LocalDateTime.now());
         partner.setCreatedAt(LocalDateTime.now());
         partner.setCreatedBy("AdminServer");
-        partner.setCategoryId(1L);
+        //partner.setCategoryId(1L);
 
         Partner newPartner = partnerRepository.save(partner);
 

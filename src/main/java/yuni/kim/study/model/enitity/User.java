@@ -3,18 +3,18 @@ package yuni.kim.study.model.enitity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 /* DB 테이블명과 클래스명을 일치시킨다.
  * 이름이 일치하지 않을 경우 설정해준다. @Table(name = "user")*/
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(exclude = {"orderGroupList"})
 @Entity
 //@Table(name = "user")
 public class User {
@@ -46,5 +46,9 @@ public class User {
     private LocalDateTime updatedAt;
 
     private String updatedBy;
+
+    //User 1 : OrderGroup N
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    private List<OrderGroup> orderGroupList;
 
 }
