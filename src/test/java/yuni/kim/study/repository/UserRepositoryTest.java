@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import yuni.kim.study.StudyApplicationTests;
 import yuni.kim.study.model.enitity.User;
+import yuni.kim.study.model.enumclass.UserStatus;
 
 import java.time.LocalDateTime;
 
@@ -21,7 +22,7 @@ class UserRepositoryTest extends StudyApplicationTests {
 
         user.setAccount("user02");
         user.setPassword("test02");
-        user.setStatus("registered");
+        user.setStatus(UserStatus.REGISTERED);
         user.setEmail("test02@gmail.com");
         user.setPhoneNumber("010-1234-5678");
         user.setRegisteredAt(LocalDateTime.now());

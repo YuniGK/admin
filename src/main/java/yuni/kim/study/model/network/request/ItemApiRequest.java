@@ -4,29 +4,35 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import yuni.kim.study.model.enumclass.UserStatus;
+import yuni.kim.study.model.enumclass.ItemStatus;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class UserApiRequest {
+public class ItemApiRequest {
 
     private Long id;
 
-    private String account;
+    private ItemStatus status;
 
-    private String password;
+    private String name;
 
-    private UserStatus status;
+    private String title;
 
-    private String email;
+    private String content;
 
-    private String phoneNumber;
+    private String brandName;
+
+    private BigDecimal price;
 
     private LocalDateTime registeredAt;
 
     private LocalDateTime unregisteredAt;
+
+    private Long partnerId;
+
 }

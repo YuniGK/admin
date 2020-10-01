@@ -7,6 +7,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import yuni.kim.study.model.enumclass.UserStatus;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -34,7 +35,14 @@ public class User {
 
     private String password;
 
-    private String status;
+    /* @Enumerated Enum 값을 가지는 필드
+    * @Enumerated에는 EnumType.STRING / EnumType.ORDINAL 존재
+    *
+    * EnumType.STRING : enum 이름을 DB에 저장
+    *
+    * EnumType.ORDINAL : enum 순서 값을 DB에 저장 */
+    @Enumerated(EnumType.STRING)
+    private UserStatus status; //REGISTERED / UNREGISTERED / WAITING 등 고정된 값을 사용한다.
 
     private String email;
 

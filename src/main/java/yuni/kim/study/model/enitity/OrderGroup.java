@@ -7,6 +7,9 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import yuni.kim.study.model.enumclass.OrderStatus;
+import yuni.kim.study.model.enumclass.OrderType;
+import yuni.kim.study.model.enumclass.PaymentType;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -27,17 +30,20 @@ public class OrderGroup {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private OrderStatus status;
 
     //주문형태 일괄 / 개별
-    private String orderType;
+    @Enumerated(EnumType.STRING)
+    private OrderType orderType;
 
     private String revAddress;
 
     private String revName;
 
     //결제 수단 카드 / 현금
-    private String paymentType;
+    @Enumerated(EnumType.STRING)
+    private PaymentType paymentType;
 
     private BigDecimal totalPrice;
 

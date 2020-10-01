@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import yuni.kim.study.controller.ifs.CrudInterface;
 import yuni.kim.study.model.enitity.User;
+import yuni.kim.study.model.enumclass.UserStatus;
 import yuni.kim.study.model.network.Header;
 import yuni.kim.study.model.network.request.UserApiRequest;
 import yuni.kim.study.model.network.response.UserApiResponse;
@@ -37,7 +38,7 @@ public class UserApiLogicService implements CrudInterface<UserApiRequest, UserAp
         User user = User.builder()
                     .account(userApiRequest.getAccount())
                     .password(userApiRequest.getPassword()) //암호화 / 길이 변경하기
-                    .status("Registered")
+                    .status(UserStatus.REGISTERED)
                     .phoneNumber(userApiRequest.getPhoneNumber())
                     .email(userApiRequest.getEmail())
                     .registeredAt(LocalDateTime.now())
